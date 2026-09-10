@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static("public"));
+app.use(express.static("frontend/public"));
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -19,7 +19,7 @@ const pool = new Pool({
 const path = require("path");
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "frontend", "public", "index.html"));
 });
 
 app.get("/matieres-premieres", async (req, res) => {
