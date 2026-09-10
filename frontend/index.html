@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ERP Impression 3D</title>
-</head>
-<body>
-
-<h1>ERP Impression 3D</h1>
-
-<button onclick="chargerMP()">
-Afficher les matières premières
-</button>
-
-<div id="resultat"></div>
-
-<script>
-
-async function chargerMP() {
-
-    const reponse =
-        await fetch('/matieres-premieres');
-
-    const data =
-        await reponse.json();
-
-    document.getElementById('resultat')
-        .innerHTML =
-        "<pre>" +
-        JSON.stringify(data, null, 2) +
-        "</pre>";
-}
-
-</script>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

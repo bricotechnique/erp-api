@@ -16,8 +16,10 @@ const pool = new Pool({
   },
 });
 
+const path = require("path");
+
 app.get("/", (req, res) => {
-  res.json({ message: "ERP API OK" });
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.get("/matieres-premieres", async (req, res) => {
